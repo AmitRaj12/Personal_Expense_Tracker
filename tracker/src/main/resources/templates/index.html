@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Tracker Home page</title>
+    </head>
+
+    <body>
+        <h1>Welcome to the Expense Tracker</h1>
+        <p>
+            <a th:href="@{/add_transaction}">Add Transaction Page</a>
+            <br>
+            <br>
+            <br>
+            <a th:href="@{/view_transaction_page}">View Transaction Page</a>
+            <br>
+            <br>
+            <br>
+            <a th:href="@{/summary_page}">Summary Page</a>
+        </p>
+    </body>
+</html>

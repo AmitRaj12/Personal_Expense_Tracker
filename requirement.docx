@@ -8,7 +8,7 @@ o	Show all records or filter by:
 	Date range
 	Category
 	Type (Income/Expense)
-3.	Edit Transaction
+3.	Edit Transaction - included in display transaction field
 o	Select a transaction by ID
 o	Update any of the fields
 4.	Delete Transaction

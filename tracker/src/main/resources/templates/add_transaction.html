@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Add Transaction page</title>
+    </head>
+
+    <body>
+        <h1>Welcome to the Add Transaction Page</h1>
+        <p>
+            <!--Form bound to transaction object-->
+            <!--Object specified with $ and field (data members) specified with *-->
+            <form th:action="@{/add_transaction}" method="post" th:object="${transaction}">
+                <label>Description:</label>
+                <input type="text" th:field="*{description}"/> <br/><br/><br/>
+
+                <label>Amount:</label>
+                <input type="number" th:field="*{amount}"/> <br/><br/><br/>
+                
+                <label>Date:</label>
+                <input type="date" th:field="*{date}"/> <br/><br/><br/>
+
+                <label>Category:</label>
+                <input type="text" th:field="*{category}"/> <br/><br/><br/>
+
+                <label>Expense type:</label>
+                <select th:field="*{e_type}">
+                    <option th:each="e: ${expense_types}" th:value="${e}" th:text="${e}"></option>
+
+                </select>
+                <br/><br/><br/><br/>
+
+                <button type="submit">Add Expense</button>
+            </form>
+        </p>
+    </body>
+</html>

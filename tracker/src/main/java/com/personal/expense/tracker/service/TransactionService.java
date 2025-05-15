@@ -1,5 +1,7 @@
 package com.personal.expense.tracker.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,5 +17,10 @@ public class TransactionService {
     public void addTransaction(Transaction transaction)
     {
         t_repo.save(transaction);
+    }
+
+    public List<Transaction> showAllTransactions()
+    {
+        return t_repo.findAll();
     }
 }

@@ -1,5 +1,7 @@
 package com.personal.expense.tracker.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -55,6 +57,16 @@ public class TransactionController {
           */
         return "redirect:/add_transaction";
     }
+
+    @GetMapping("/view_transaction")
+    public String showAllTransactions(Model model) {
+        List<Transaction> t_list = t_Service.showAllTransactions();
+
+        model.addAttribute("transaction_list", t_list);
+
+        return "view_transaction";
+    }
+    
     
     
 }

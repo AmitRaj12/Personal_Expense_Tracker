@@ -19,12 +19,12 @@ public class Transaction {
     private Long id;
 
     private String description;
-    private long amount;
+    private Long amount;
     private Date date;
     private String category;
     private ExpenseType e_type;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
     public void setId(long id) {
@@ -36,7 +36,7 @@ public class Transaction {
     public void setDescription(String description) {
         this.description = description;
     }
-    public long getAmount() {
+    public Long getAmount() {
         return amount;
     }
     public void setAmount(long amount) {

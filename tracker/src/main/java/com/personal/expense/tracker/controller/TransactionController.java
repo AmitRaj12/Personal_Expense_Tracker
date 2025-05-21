@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.personal.expense.tracker.model.Transaction;
@@ -67,6 +68,19 @@ public class TransactionController {
         return "view_transaction";
     }
     
+    @GetMapping("/view_transaction/edit/{id}")
+    public String findTransactionById(@PathVariable Long id, Model model) {
+        Transaction transaction = t_Service.findTransactionById(id);
+        model.addAttribute("transaction", transaction);
+
+        return "edit_transaction";
+    }
+    
+    @PostMapping("/view_transaction/edit/")
+    public String updateTransaction(@ModelAttribute("transaction") Transaction transaction) {
+        t_Service.updateTransactionById(transaction, transaction.getId());
+        return "redirect:/view_transaction";
+    }
     
     
 }

@@ -1,23 +1,28 @@
 ✅ Requirements for Personal Expense Tracker with SQLite
 🚀 Functional Requirements
-1.	Add Transaction
+1.	Add Transaction (done)
 o	Input: Description, Amount, Date, Category, Type (Expense or Income)
 o	Action: Insert record into SQLite DB
+
 2.	View Transactions
-o	Show all records or filter by:
+o	Show all records(done) or filter by:
 	Date range
 	Category
 	Type (Income/Expense)
+
 3.	Edit Transaction - included in display transaction field
 o	Select a transaction by ID
 o	Update any of the fields
+
 4.	Delete Transaction
 o	Delete transaction by ID
+
 5.	View Summary
 o	Total income
 o	Total expenses
 o	Net balance
 o	Optional: Monthly summaries
+
 6.	Persist Data
 o	Use SQLite DB (transactions.db)
 o	Table structure: transactions

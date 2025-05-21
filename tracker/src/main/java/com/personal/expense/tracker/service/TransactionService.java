@@ -23,4 +23,17 @@ public class TransactionService {
     {
         return t_repo.findAll();
     }
+
+    public Transaction findTransactionById(Long id)
+    {
+        return t_repo.getReferenceById(id);
+    }
+
+    public void updateTransactionById(Transaction transaction, Long id)
+    {
+        if(t_repo.existsById(id))
+        {
+            t_repo.save(transaction);
+        }
+    }
 }

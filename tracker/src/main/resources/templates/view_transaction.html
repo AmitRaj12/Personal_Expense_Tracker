@@ -21,6 +21,7 @@
                         <th>Date</th>
                         <th>Category</th>
                         <th>Expense Type</th>
+                        <th>Edit option</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,6 +32,7 @@
                         <td th:text="${t.date}"></td>
                         <td th:text="${t.category}"></td>
                         <td th:text="${t.e_type}"></td>
+                        <td><a th:href="@{'/view_transaction/edit/' + ${t.id}}" class="btn btn-primary">Edit</a></td>
                     </tr>
                 </tbody>
 

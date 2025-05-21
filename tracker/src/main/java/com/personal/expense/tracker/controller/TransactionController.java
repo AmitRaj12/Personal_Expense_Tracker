@@ -82,5 +82,12 @@ public class TransactionController {
         return "redirect:/view_transaction";
     }
     
+    @GetMapping("/view_transaction/delete/{id}")
+    public String deleteTransactionById(@PathVariable Long id) {
+        t_Service.deleteTransactionById(id);
+
+        return "redirect:/view_transaction";
+    }
+    
     
 }

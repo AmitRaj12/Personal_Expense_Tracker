@@ -36,4 +36,12 @@ public class TransactionService {
             t_repo.save(transaction);
         }
     }
+
+    public void deleteTransactionById(Long id)
+    {
+        if(t_repo.existsById(id))
+        {
+            t_repo.deleteById(id);
+        }
+    }
 }

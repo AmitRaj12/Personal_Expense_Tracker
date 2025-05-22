@@ -3,9 +3,11 @@ package com.personal.expense.tracker.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.convert.Jsr310Converters.InstantToLocalDateTimeConverter;
 import org.springframework.stereotype.Service;
 
 import com.personal.expense.tracker.model.Transaction;
+import com.personal.expense.tracker.model.ExpenseType;
 import com.personal.expense.tracker.repository.TransactionRepository;
 
 @Service
@@ -43,5 +45,23 @@ public class TransactionService {
         {
             t_repo.deleteById(id);
         }
+    }
+
+    public Long getTotalIncome()
+    {
+        Long ret = t_repo.sumAmountByEType(ExpenseType.INCOME);
+
+        if(ret == null) ret = new Long(0);
+        
+        return ret;
+    }
+
+    public Long getTotalExpense()
+    {
+        Long ret = t_repo.sumAmountByEType(ExpenseType.EXPENSE);
+
+        if(ret == null) ret = new Long(0);
+        
+        return ret;
     }
 }

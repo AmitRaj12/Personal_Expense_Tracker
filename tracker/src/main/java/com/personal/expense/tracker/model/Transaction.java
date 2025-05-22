@@ -3,16 +3,14 @@ package com.personal.expense.tracker.model;
 import java.sql.Date;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 public class Transaction {
-    public enum ExpenseType {
-        EXPENSE,
-        INCOME
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,12 +20,14 @@ public class Transaction {
     private Long amount;
     private Date date;
     private String category;
+
+    @Enumerated(EnumType.STRING)
     private ExpenseType e_type;
 
     public Long getId() {
         return id;
     }
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
     public String getDescription() {
@@ -39,7 +39,7 @@ public class Transaction {
     public Long getAmount() {
         return amount;
     }
-    public void setAmount(long amount) {
+    public void setAmount(Long amount) {
         this.amount = amount;
     }
     public Date getDate() {

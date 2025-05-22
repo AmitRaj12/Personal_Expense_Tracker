@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.personal.expense.tracker.model.Transaction;
-import com.personal.expense.tracker.model.Transaction.ExpenseType;
+import com.personal.expense.tracker.model.ExpenseType;
 import com.personal.expense.tracker.service.TransactionService;
 
 import org.springframework.web.bind.annotation.PostMapping;
@@ -88,6 +88,15 @@ public class TransactionController {
 
         return "redirect:/view_transaction";
     }
+
+    @GetMapping("/summary")
+    public String getSummaryPage(Model model) {
+        model.addAttribute("total_income", t_Service.getTotalIncome());
+        model.addAttribute("total_expense", t_Service.getTotalExpense());
+        model.addAttribute("net_balance", t_Service.getTotalIncome() - t_Service.getTotalExpense());
+        return "summary";
+    }
+    
     
     
 }

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Tracker Home page</title>
+    </head>
+
+    <body>
+        <h1>Welcome to the Summary Page</h1>
+        <p>
+            <b>Total Income:</b> <span th:text="${total_income}"></span>
+        </p>
+        <p>
+            <b>Total Expense:</b> <span th:text="${total_expense}"></span>
+        </p>
+
+        <p>
+            <b>Net Balance:</b> <span th:text="${net_balance}"></span>
+        </p>
+    </body>
+</html>

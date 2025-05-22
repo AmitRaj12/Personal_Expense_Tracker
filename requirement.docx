@@ -10,12 +10,11 @@ o	Show all records(done) or filter by:
 	Category
 	Type (Income/Expense)
 
+
 3.	Edit Transaction - included in display transaction field
 o	Select a transaction by ID
 o	Update any of the fields
 
-Bug:
-There is no dropdown to chose expense type in edit page (Need to be checked)
 
 
 4.	Delete Transaction (done)
@@ -25,7 +24,7 @@ o	Delete transaction by ID (Have a delete option for each transaction)
 o	Total income
 o	Total expenses
 o	Net balance
-o	Optional: Monthly summaries
+
 
 6.	Persist Data
 o	Use SQLite DB (transactions.db)

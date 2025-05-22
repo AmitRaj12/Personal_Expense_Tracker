@@ -24,6 +24,7 @@
 
                 <label>Expense type:</label>
                 <select th:field="*{e_type}">
+                    <option value="" selected disabled>-- Select Type --</option>
                     <option th:each="e: ${expense_types}" th:value="${e}" th:text="${e}"></option>
 
                 </select>

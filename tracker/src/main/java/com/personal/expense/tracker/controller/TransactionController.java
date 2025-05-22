@@ -72,7 +72,7 @@ public class TransactionController {
     public String findTransactionById(@PathVariable Long id, Model model) {
         Transaction transaction = t_Service.findTransactionById(id);
         model.addAttribute("transaction", transaction);
-
+        model.addAttribute("expense_types", ExpenseType.values());
         return "edit_transaction";
     }
     
